@@ -1,0 +1,338 @@
+<html lang="en">
+<head>
+    <title>home</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .left-side{
+            position: absolute;
+            margin: 1% 3%;
+            background-color: rgb(255, 255, 255);
+            width: 10%;
+        }
+        .left-side hr{
+            display: none;
+        }
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        .left-title{
+            margin-top: 20px;
+            font-size: 30px;
+            
+        }
+        .left-items{
+            font-size: 20px;
+            color: rgb(132 139 142);
+            padding-top: 30%;
+        }
+        .marked{
+            text-decoration: red line-through solid;
+        }
+        .left-side button{
+            display: block;
+            top: 10px;
+            height: 51px;
+            width: 140px;
+            margin: 54px 0px;
+            background-color: #ff0000eb;
+            border-radius: 25px;
+            border: 1px solid #ff0000eb;
+            color: rgb(255, 255, 255);
+            margin: top 40px;
+        }
+        .main{
+            display: block;
+            position: absolute;
+            width:75%;
+            margin: 8% 23%;
+        }
+        .main .title{
+            font-size: 68px;
+            font-weight: bold;
+        }
+        .row{
+            margin: 64px -14px;   
+            width: auto;
+            position: relative;      
+        }
+        .column{
+            float:left;
+            width: 176px;
+            padding: 0 10px;
+        }
+        .cards-items{
+            height: 200px;
+            width: 175px;
+            background-color: white;
+            margin-right: 30px;
+            box-shadow: 0px 17px 30px #88888899;            border-radius: 17px;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: bold;  
+            margin-top: 10px;     
+        }
+        .cards-items img{
+            height: 115px;
+            margin: 10px;
+            width: 115px;
+            border-radius: 50%;
+            padding-bottom: 10px;
+            object-fit: cover;
+        }
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .about{
+            position: absolute;
+            margin: 8% 68%;
+            color: rgb(180, 183, 184);
+        }
+        .about hr{
+            height: 3px;
+            width: 60px;
+            border-radius: 10px;
+            border-style: none;
+            float: left;
+            background-color: #fd1e1ecf;
+            margin-top: -10px;
+        }
+        .res-nav{
+            display: none;
+        }
+        /* Responsive */
+        @media (max-width:1150px){
+            .left-items{
+                display: none;
+            }
+            .collapse{
+                display: block;
+                margin: 1% 3%;
+                background-color: rgb(255, 255, 255);
+                position: relative;
+                text-align: center;
+                font-size: 25px;
+                width: 100%;
+            }
+            .collapse .left-items{
+                display: block;
+            }
+            .main{
+                width: 90%;
+                font-size: 26px;
+                margin: 1px 1px 1px 1px;
+                position: relative;
+            }
+            .main .title{
+                font-size: 50px;
+                text-align: left;
+                margin-left: 3%;
+                margin-top: 4%;
+            }
+            .about{
+                position: relative;
+                width: 100%;
+                font-size: 25px;
+                margin: 5px 1px;
+                
+            }
+            .cards-items{
+                height: 345px;
+                text-align: center;
+                width: 331px;
+                box-shadow: 53px 62px 69px #d8d0d0;
+            }
+            .cards-items img{
+                height: 201px;
+                margin: 30px;
+                width: 200px;
+
+            }
+            .column{
+                width: 40%;
+                padding: 5% 5%;
+            }
+            .row{
+            margin: 3% 3%;   
+            width: 100%;
+            position: relative;      
+        }
+        .last{
+            display: none;
+        }
+        .res-nav{
+            display: block;
+            width: 100%;
+            position: relative;
+            margin-top: 27px;
+            padding-bottom: 23px;
+            height: 88px;
+        }
+        .nav-bar{
+            float: left;
+            margin: 3% 1%;
+        }
+        .nav-bar button{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .head{
+            font-weight: bold;
+            font-size: 50px;
+            text-align: center;
+            padding: 28px;
+        }
+        .cart{
+            float: right;
+            margin: -8% 4%;
+        }
+        .cart img{
+            height: 50px;
+            width: 50px;
+        }
+        .collapse{
+            display: block;
+            transform: rotate(30);
+        }
+        .left-title{
+            display: none;
+        }
+        .left-side button{
+            display: none;
+        }
+        .left-items {
+            padding-top: 3%;
+            border-radius: 1px;
+           
+        }
+        .collapse hr{
+
+            display: block;
+            height: 3px;
+            width: 65%;
+            border-radius: 10px;
+            border-style: none;
+            text-align: center;
+            background-color: #fd1e1ecf;
+            margin-bottom: 0%;
+            margin-top: 2%;
+        }
+        .nav-bar button{
+            border: none;
+        }
+        .marked{
+            text-decoration: red underline solid;
+        }
+
+    }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="res-nav" >
+        <div class="nav-bar">
+            <button @click="toggle">
+                <img width="50px" height="50px" src="https://image.flaticon.com/icons/png/128/812/812847.png" alt="">
+            </button>
+        </div>
+        <div class="head">
+            Lorem
+        </div>
+        <div class="cart">
+            <img src="https://image.flaticon.com/icons/png/128/726/726496.png" alt="cart">
+        </div>
+    </div>
+    <div class="left-side" :class="{ 'collapse': active }">
+        <div class="left-title">
+            <b>Lorem Ipsum</b>
+        </div>
+        <hr>
+        <div class="left-items marked">
+            About 
+        </div>
+        <div class="left-items">
+            Services
+       </div>
+       <div class="left-items">
+            Cuisine
+       </div>
+       <div class="left-items">
+            Gallery
+        </div>
+        <div class="left-items">
+            Contact
+       </div>
+       <div class="left-items">
+            Book
+        </div>
+        <hr>
+        <button>Cart</button>
+    </div>
+    
+    <div class="main">
+        <div class="title">
+            What are you <br>having for Lunch?
+        </div>
+        <div class="row ">
+            <div class="column">
+            <div class="cards-items">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGFjb3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="taco">
+                Mexican Taco
+            </div>
+            </div>
+            <div class="column">
+            <div class="cards-items">
+                <img src="http://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="pizza">
+                Farmhouse Pizza
+            </div>
+            </div>
+            <div class="column">
+                <div class="cards-items">
+                    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=364&q=80" alt="burger">
+                    Chicken Burger 
+                </div>
+                </div>
+            <div class="column">
+                <div class="cards-items">
+                    <img src="https://images.unsplash.com/photo-1568289801407-a1e2b4809aec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvYWRlZCUyMG5hY2hvc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="nachos">
+                        Loaded Nachos 
+                </div>
+            </div>
+            <div class="column last">
+                <div class="cards-items">
+                    <img src="https://images.unsplash.com/photo-1600490036275-35f5f1656861?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODd8fGhha2thJTIwbm9vZGxlc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="noodles">
+                        Hakka Noodles 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <pre>
+Lorem ipsum dolor sit amet, 
+consectetur adipisicing elit. 
+Voluptatem, laboriosam amet
+nisi quasi vel officiis.
+        </pre>
+        <hr>
+    </div>
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data:{
+            active:false,
+        },
+        methods: {
+            toggle() {
+                console.log("hi");
+                if(this.active == false)
+                    this.active = true;
+                else    
+                    this.active = false;
+            }
+        },
+    })
+</script>
+</html>
